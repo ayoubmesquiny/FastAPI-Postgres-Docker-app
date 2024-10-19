@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  fastapi:
+    build: .
+    container_name: fastapi_app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DB_URL: postgresql+asyncpg://ayoub:ayoub1319@db:5432/ItemDatabase
+    volumes:
+      - .:/app
+
+  db:
+    image: postgres:14
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: ayoub
+      POSTGRES_PASSWORD: ayoub1319
+      POSTGRES_DB: ItemDatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

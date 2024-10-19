@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# FastAPI specific files
+*.log
+
+# Environments
+.env
+
+# Docker files
+*.pid
+*.log
+db_data/
+postgres_data/
+
+# Virtual environments
+env/
+venv/
+ENV/
+
+# Docker related
+.dockerignore
+
+# VSCode settings
+.vscode/
